@@ -1,6 +1,6 @@
 
 report_system_file <- function(file) {
-  system.file("rmarkdown", paste0("skeleton/", file) , package = "ENRanalytics")
+  system.file("rmarkdown", paste0("skeleton/", file) , package = "reppear")
 }
 
 load_files <- function(path, subdir = "reports") {
