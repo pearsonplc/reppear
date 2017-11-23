@@ -1,0 +1,56 @@
+---
+title: "Growth Mindset is better"
+
+intro: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum itaque voluptates quo doloremque reprehenderit quae. Minus possimus itaque non iusto molestias labore est vero esse pariatur nam sed, dignissimos temporibus ut voluptate laborum optio cupiditate voluptatem repellendus amet quae laboriosam, magnam deserunt quaerat fuga. Praesentium quidem, quia voluptas exercitationem! Voluptatum fuga tenetur, nostrum iusto consequuntur ullam, quam ab illum sit totam consequatur at aliquam nulla, voluptatibus aliquid. In eum, sed sit est nihil, unde necessitatibus commodi nam vel qui, quam consectetur laboriosam nemo? Ipsam assumenda voluptas numquam facilis ullam inventore repellat ad cupiditate, illum quis? Eius aliquid excepturi necessitatibus pariatur?
+
+author_email: mikolaj.bogucki@pearson.com, mikolaj.olszewski@pearson.com
+
+finding:
+      multisection:
+            - section: "Section 1 title"
+              details:
+                  - name: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt <b> 70% </b> ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    link: https://docs.google.com/presentation/d/1Tof8mVeF6UJLgVaD2bwGTnxBv3o55IzhqglIxahV3hA/edit
+                  - name: Ut enim ad minim veniam, quis nostrud exercitation ullamco __laboris nisi ut aliquip__ ex ea commodo consequat.
+                    link: initial.html
+                  - name: __Duis aute irure__ dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    link: initial.html
+            - section: "Section 2 title"
+              details:
+                  - name: Ut enim ad minim veniam, quis nostrud exercitation ullamco __laboris nisi ut aliquip__ ex ea commodo consequat.
+                    link: initial.html
+                  - name: __Duis aute irure__ dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    link: initial.html
+
+in_progress: 
+- name: "Progress 1"
+  link: progress1.html
+- name: "Progress 2"
+  link: progress2.html
+- name: "Progress 3"
+  link: progress3.html
+
+appendix: 
+- name: "Why X is equal to Y?"
+  link: initialA.html
+- name: "What is the capital of Peru?"
+  link: initialB.html
+- name: "What is the capital of Poland?"
+  link: initialC.html
+
+thanks:
+- name: "Colleague 1"
+  forwhat: "X"
+- name: "Colleague 2"
+  forwhat: "Y"
+- name: "Colleague 3"
+  forwhat: "Z"
+  
+tooltip:
+- name: mpg
+  descr: Miles per Gallon - measure of the vehicle's fuel consumption commonly used in the United States, the United Kingdom, and Canada.
+- name: test
+  descr: This is a sample tooltip.
+
+output: ENRanalytics::enr_index
+---

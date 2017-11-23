@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"$if(lang)$ lang="$lang$" xml:lang="$lang$"$endif$>
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name = "author" content = "Efficacy Analytics, Efficacy & Research, Global Product" />
+<meta name="generator" content="pandoc" />
+
+$if(theme)$
+$else$
+<meta name="viewport" content="width=device-width, initial-scale=1">
+$endif$
+
+$if(title)$
+<title>$title$</title>
+$else$
+<title>$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$</title>
+$endif$
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+$for(css)$
+<link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/>
+$endfor$
+
+</head>
+
+<body class = "index-body">
+
+$for(include-before)$
+$include-before$
+$endfor$
+
+<div class = "index-container">
+<div class = "logobar">
+<div class = "author">Analysis by Efficacy Analytics, Efficacy & Research</div>
+<!-- Fill in proper email address -->
+<div>Contact: 
+$for(author_email)$
+<span id = "recipient-email">$author_email$</span>
+$endfor$
+</div>
+<div>Repository: 
+<a href="$bitbucket_url$" class="uri" target="_blank">$bitbucket_url$</a>
+</div>
+<div>Last updated: <script>d = new Date(document.lastModified); document.write(d.toDateString())</script></div>
+</div>
+<center><h1>$title$</h1></center>
+<div>
+<!-- Introduction -->
+<h3>Introduction</h3>
+<p>$intro$</p>
+
+$if(finding)$
+<h3>We have found that</h3>
+$if(finding.multisection)$
+$for(finding.multisection)$
+<div class = "finding-section">
+<div class = "left-col">$finding.multisection.section$</div>
+<div class = "findings">
+$for(finding.multisection.details)$
+<div class = "finding">
+<div class = "mid-col">$finding.multisection.details.name$</div>
+<div class = "right-col">
+<a href = "$finding.multisection.details.link$" class = "index-button">Read more <span class = "estimated-time">$finding.multisection.details.est_time$</span></a>
+</div>
+</div>
+$endfor$
+</div>
+</div>
+<hr>
+$endfor$
+$else$
+<div style = "clear:both"></div>
+<div class = "finding-section single">
+<div class = "findings">
+$for(finding)$
+<div class = "finding">
+<div class = "mid-col">
+$finding.name$
+</div>
+<div class = "right-col">
+<a href = "$finding.link$" class = "index-button">Read more <span class = "estimated-time">$finding.est_time$</span></a>
+</div>
+</div>
+$endfor$
+</div>
+</div>
+$endif$
+$endif$
+                
+<!-- Work in progress section -->
+$if(in_progress)$
+<div style = "clear:both"></div>
+<h3>Work in progress</h3>
+$for(in_progress)$
+<a href = "$in_progress.link$" class = "index-button">$in_progress.name$</a>
+$endfor$
+$endif$
+
+$if(appendix)$
+<div style = "clear:both"></div>
+<h3>Appendices</h3>
+$for(appendix)$
+<a href = "$appendix.link$" class = "index-button">$appendix.name$</a>
+$endfor$
+$endif$
+
+<!-- Thanks to section -->
+$if(thanks)$
+<div style = "clear:both"></div>
+<h3>Thanks to our colleagues</h3>
+<ul class = "colleagues">
+$for(thanks)$
+<li><b>$thanks.name$</b> for $thanks.forwhat$</li>
+$endfor$
+</ul>
+$endif$
+<br/><br/>
+</div>
+</div>
+    
+$body$
+
+$for(include-after)$
+$include-after$
+$endfor$
+
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-68108315-8', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>

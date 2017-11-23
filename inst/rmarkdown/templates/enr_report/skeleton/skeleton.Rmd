@@ -1,0 +1,202 @@
+---
+title: "Put report title here, make it appealing"
+params:
+    comment_id: "Default"
+    annotations: "on" # on / off
+output: 
+    ENRanalytics::enr_report:
+        before_body: ['../_header.html', '../_tooltip_content.html']
+---
+
+```{r inits, include = FALSE, cache = FALSE}
+# Load libraries
+library(ggplot2)
+library(ENRanalytics)
+library(tidyverse)
+# Set to show errors in shiny
+options(shiny.sanitize.errors = TRUE)
+# Set default chunk options
+knitr::opts_chunk$set(dpi = 144, fig.width = 13, fig.height = 8, cache = F, echo = F, warning = F)
+```
+
+```{r readability, include = FALSE}
+# Calculate readability
+rdblty <- mean_readability(knitr::current_input())
+```
+
+```{r}
+# Prepare the data
+data <- mutate(mtcars, am = factor(am, levels = c(0,1), labels = c("Automatic", "Manual"))) 
+
+# Fit linear model to entire dataset
+lmGeneral <- lm(mpg ~ wt, data = data)
+
+# Fit linear model to specific factor levels
+lmAM <- data %>% split(.$am) %>%
+  map(~ lm(mpg ~ wt, data = .)) %>%
+  map(coef) %>%
+  map_dbl("wt")
+
+plot <- ggplot(data = data, aes(x = wt, y = mpg, group = am, color = am)) +
+        geom_point(size = 3) +
+        geom_smooth(method = "lm", se = F) +
+        xlab("Car weight (tons)") +
+        ylab("US miles per gallon") +
+        theme_enr(method = "color", fig_number = "000", color = p_colors, legend_title = "Transmission:") +
+        legend_enr(position = c(.7,.9))
+
+plot2 <- ggplot(data = data, aes(x = wt, y = mpg, group = am)) +
+        geom_point(size = 3) +
+        xlab("Car weight (tons)") +
+        ylab("US miles per gallon") +
+        theme_enr(method = "color", fig_number = "000", color = p_colors, legend_title = "Transmission:") +
+        legend_enr(position = c(.7,.9))
+```
+
+<div id = "reading-time" class = "text-center"></div>
+
+<div class = "summary">
+
+##### Summary
+
+Put summary here. Use bullet points. Good summary should be:
+
+* short,
+* specific,
+* informative.
+
+To engage your reader put a link to the section that relates to the finding:
+
+* Economy of the car decreases by __`r round(lmGeneral$coefficients["wt"],1)` MPG__ with each additional ton of car weight (<a href = "#section2">Read more</a>).
+
+</div>
+
+### 1. Section title (should contain main section finding) {#section1}
+
+#### 1.1 Subsection 1 title (add only if necessary, should contain main subsection finding)
+
+Description of findings shown on the chart below should be placed here. Make it few sentences at most. Do __not__ include any detailed information about filtering or dataset unless absolutely necessary to understand the chart.
+
+Remember that if you need to explain something it's better to explain the necessary details with a <span class = "tooltipster tooltip-test">tooltip</span>.
+
+Put the chart description under the chart. Make it short and informative to help reader get the most out of it. See below for the example of entire section.
+
+```{r}
+plot
+```
+
+<div class = "plot-caption">Chart number and description goes here</div>
+
+### 2. Economy of the car decreases by `r abs(round(lmGeneral$coefficients["wt"],1))` <span class = "tooltipster tootlip-mpg">MPG</span></span> with each additional ton of car weight (on avg.). {#section2}
+
+The average decrease of car economy is __`r abs(round(lmGeneral$coefficients["wt"],1))`__ <span class = "tooltipster tootlip-mpg">MPG</span></span> per each additional ton of the car weight. However the decrease is __steper for cars with Manual transmission__ comparing to Automatic (`r abs(round(lmAM["Manual"],1 ))` and `r abs(round(lmAM["Automatic"],1 ))` <span class = "tooltipster tootlip-mpg">MPG</span></span> decrease with each ton respectively). We can also see that Manual transmission is more popular in case of the lighter cars and Automatic in case of the heavier ones.
+
+```{r}
+plot2
+```
+
+
+<div class = "plot-caption">Figure 1. Relationship between car weight and fuel economy. Lines show linear models.</div>
+
+### Thanks to
+
+Reference people who helped. Use bulletpoints. In example:
+
+* __Henderson and Velleman__ for providing the mtcars dataset,
+* __Mikołaj Bogucki__ and __Krzysztof Jędrzejewski__ for posting the research question and helping to understand the data.
+
+
+### Additional information
+
+<!--html_preserve-->
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingOne" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            <h5 class="panel-title">
+            Next steps
+            </h5>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+            <div class="panel-body">
+<!--/html_preserve-->
+
+<!-- Next step box -->
+_Put the next steps here. Use bulletpoints. If there are no additional steps delete this section. In example:_
+
+* Correlate other factors with MPG.
+* Wait for more data and re-run on bigger sample.
+
+<!--html_preserve-->
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingTwo" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <h5 class="panel-title">
+                Data
+            </h5>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="panel-body">
+<!--/html_preserve-->
+
+<!-- Data box -->
+_Put all necessary information about the dataset here. The most important thing is the sample size used._
+
+<!--html_preserve-->
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingThree" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            <h5 class="panel-title">
+            Filtering
+            </h5>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="panel-body">
+<!--/html_preserve-->
+
+<!-- Filtering box -->
+_Put all necessary information about the filtering here._
+
+<!--html_preserve-->
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingFour" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            <h5 class="panel-title">
+            Methodology
+            </h5>
+        </div>
+        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+            <div class="panel-body">
+<!--/html_preserve-->
+
+<!-- Methodology box -->
+_If you think some methodology needs explanation. Put it here._
+
+<!--html_preserve-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--/html_preserve-->
+
+<div class = "readability">Mean readability index: `r rdblty`</div>
+
+</br></br>
+
+<a class = "back-button" href = "index.html">← Go back to index page</a>
+<!--This is pulled from YAML settings. If set to "default", filename is used as comment identifier. If other, the custom value given is used.-->
+<div id = "comment_id">`r params$comment_id`</div>
+<div id = "annotations_on_off">`r params$annotations`</div>
+
+
+```{r message = F}
+message(" ")
+message(paste0(knitr::current_input(), ": Mean readability index: ", rdblty))
+```
+

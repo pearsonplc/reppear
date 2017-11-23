@@ -1,0 +1,203 @@
+/*@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');*/
+
+body, svg {
+    font-family: 'Open Sans' !important
+}
+
+h1 {
+    text-align:center;
+}
+
+h3 {
+    margin-top: 30px;
+    line-height: 32px;
+}
+
+h4 {
+    margin-top:15px;
+}
+
+h5 {
+    font-weight:600;
+}
+
+/* Make links a Pearson color */
+a {
+    color: #007a9c;
+}
+
+p {
+    position: relative;
+}
+
+div.figure {
+    position: relative;
+}
+
+.mt10 {
+    margin-top:10px;
+}
+
+.summary {
+    background: #D4EAE4;
+    padding: 10px 15px;
+    margin: 30px 0 20px 0;
+    color: #003057;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    text-align: justify;
+}
+
+.summary h4 {
+    margin-top:10px;
+}
+
+.logobar {
+    width:100%;
+    height: 80px;
+    background-image: url('../img/logo.png');
+    background-size: 177px 80px;
+    background-repeat: no-repeat;
+    text-align: right;
+    font-size:11px;
+    line-height:16px;
+}
+
+.product {
+    font-weight:bold;
+    font-size: 14px;
+    padding-top:14px;
+    line-height:20px;
+}
+
+.author {
+    padding-top:15px;
+}
+
+/* Fix the back to index button position */
+.back-button {
+    display:block;
+    position:fixed;
+    z-index: 99;
+    bottom:0px;
+    left:0px;
+    width:100%;
+    height:30px;
+    text-align:center;
+    color:#fff;
+    font-size:14 px;
+    line-height:28px;
+    background:#007a9c;
+    cursor:pointer;
+}
+
+.back-button:hover {
+    color:#fff;
+    text-decoration:none;
+    background:#0080a3;
+}
+
+/* Create a class to style plot captions */
+.plot-caption {
+    font-size: 13px; 
+    line-height:20px;
+    font-style: italic;
+    text-align:center;
+}
+
+/* Style the tooltip link */
+.tooltipster {
+    cursor: pointer;
+    color:#007a9c;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* Fix toc color */
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+    background-color:#007a9c !important;
+    border-color:#007a9c !important;
+}
+
+/* Fix TOC inded in case of multi line headings */
+.tocify-header {
+    text-indent: 0px;
+}
+
+.tocify .tocify-item a, .tocify .list-group-item {
+    padding: 7px 10px;
+}
+
+/* Style accordion */
+.panel-heading {
+    cursor:pointer;
+}
+
+.panel-heading:hover h5 {
+    text-decoration:underline;
+}
+
+/* Style readability */
+.readability {
+    text-align:center;
+    font-size:10px;
+    color:#eeeeee;
+}
+
+/* Style comments */
+.comments .btn {
+    background: #007a9c;
+    margin-top:10px;
+    margin-bottom:10px;
+    float:right;
+}
+
+.comments .btn:hover {
+    background: #008cb3;
+    border-color: #008cb3;
+}
+
+.show-comments .single-comment {
+    border-top:1px solid #ddd;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.show-comments .single-comment:first-child {
+    border-top:none;
+}
+
+.show-comments .single-comment .comment-author {
+    font-size:16px;
+    margin-bottom:4px;
+}
+
+.show-comments .single-comment .comment-author span {
+    font-weight:600;
+}
+
+.date-email {
+    color:#888;
+    font-size: 12px;
+    margin-bottom:8px;
+}
+
+/* Style modal button */
+.modal-footer .btn {
+    background: #007a9c;
+    margin-top:10px;
+    margin-bottom:10px;
+    color:#fff;
+    border-color: #008cb3;
+}
+
+.modal-footer .btn:hover {
+    background: #008cb3;
+    border-color: #008cb3;
+}
+
+/* Hide div distinguishing whether to use default or custom comment id */
+#comment_id, #annotations_on_off {
+    display:none;
+}

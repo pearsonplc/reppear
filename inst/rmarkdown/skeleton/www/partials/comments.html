@@ -1,0 +1,35 @@
+<h3>Comments</h3>
+<p>Feel free to share your thoughts on the report.</p>
+<div class = "comments">
+    <div class = "add-comment">
+        <form id = "comment-form">
+            <label for = "author">Author:</label>
+            <input type = "text" name = "author" class = "form-control" id = "comment-author-fld"/>
+            <label for = "email" class = "mt10">Email:</label>
+            <input type = "text" name = "email" class = "form-control" id = "email-author-fld"/>
+            <label for = "comment" class = "mt10">Comment:</label>
+            <textarea class = "form-control" rows = "5" id = "comment-content-fld"></textarea>
+            <input type = "submit" value = "Add comment" class = "btn btn-primary"/>
+        </form>
+    </div>
+    <div style = "clear:both"></div>
+    <div id = "show-comments" class = "show-comments"></div>
+    <!-- Modal with information about required fields-->
+    <div class="modal fade" id="modal-required" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h5 class="modal-title">All fields are required</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Please make sure to fill in all the fields.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</br></br>
