@@ -1,11 +1,10 @@
 Package: reppear
 Type: Package
-Title: What the Package Does (Title Case)
+Title: A package which allows to build and maintain a project
 Version: 0.1.0
 Author: Mikołaj Bogucki
 Maintainer: Mikołaj Bogucki <mikolaj.bogucki@pearson.com>
 Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
 License: GPL-2
 Imports:
     readability (>= 0.1.1),

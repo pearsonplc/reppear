@@ -4,14 +4,14 @@ params:
     comment_id: "Default"
     annotations: "on" # on / off
 output: 
-    ENRanalytics::enr_report:
+    reppear::enr_report:
         before_body: ['../_header.html', '../_tooltip_content.html']
 ---
 
 ```{r inits, include = FALSE, cache = FALSE}
 # Load libraries
 library(ggplot2)
-library(ENRanalytics)
+library(reppear)
 library(tidyverse)
 # Set to show errors in shiny
 options(shiny.sanitize.errors = TRUE)

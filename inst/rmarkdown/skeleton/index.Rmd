@@ -52,5 +52,5 @@ tooltip:
 - name: test
   descr: This is a sample tooltip.
 
-output: ENRanalytics::enr_index
+output: reppear::enr_index
 ---
