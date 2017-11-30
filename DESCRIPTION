@@ -10,6 +10,7 @@ Imports:
     readability (>= 0.1.1),
     magrittr (>= 1.5),
     rmarkdown (>= 1.6)
-URL: https://bitbucket.pearson.com/projects/EF/repos/reppear/browse
+URL: https://github.com/pearsonplc/reppear
+BugReports: https://github.com/pearsonplc/reppear/issues
 Encoding: UTF-8
 RoxygenNote: 6.0.1
