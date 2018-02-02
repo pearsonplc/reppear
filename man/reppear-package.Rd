@@ -4,15 +4,15 @@
 \name{reppear-package}
 \alias{reppear}
 \alias{reppear-package}
-\title{reppear: What the Package Does (Title Case)}
+\title{reppear: A package which allows to build and maintain a project}
 \description{
 More about what it does (maybe more than one line)
-Use four spaces when indenting paragraphs within the Description.
 }
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://bitbucket.pearson.com/projects/EF/repos/reppear/browse}
+  \item \url{https://github.com/pearsonplc/reppear}
+  \item Report bugs at \url{https://github.com/pearsonplc/reppear/issues}
 }
 
 }

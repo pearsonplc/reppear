@@ -11,8 +11,9 @@ output:
 ```{r inits, include = FALSE, cache = FALSE}
 # Load libraries
 library(ggplot2)
-library(reppear)
 library(tidyverse)
+library(reppear)
+library(vispear)
 # Set to show errors in shiny
 options(shiny.sanitize.errors = TRUE)
 # Set default chunk options

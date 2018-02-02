@@ -1,10 +1,10 @@
 
-report_system_file <- function(file) {
-  system.file("rmarkdown", paste0("skeleton/", file) , package = "reppear")
+report_system_file <- function(file, root = "skeleton") {
+  system.file("rmarkdown", file.path(root, file) , package = "reppear")
 }
 
 load_files <- function(path, subdir = "reports") {
-  command <- path %>% list.files(full.names = T)
+  command <- list.files(path, full.names = T)
   file.copy(command, subdir)
 }
 
@@ -33,14 +33,12 @@ add_repo_to_yaml <- function(file) {
   partitions <- rmarkdown:::partition_yaml_front_matter(input_lines)
   yaml <- partitions$front_matter
 
-  # yaml <- yaml[1:(length(yaml) - 1)] %>% paste(collapse = "\n")
   bit_url <- extract_repo_url()
 
   author_line <- which(stringr::str_detect(yaml, pattern = "^author_email"))
   yaml[author_line] <- paste0(yaml[author_line], bit_url)
   yaml <- paste(yaml, collapse = "\n")
 
-  # new_yaml <- c(yaml, bit_url)
   cat(yaml, file = file)
 
 }
@@ -49,7 +47,7 @@ extract_repo_url <- function() {
 
   if (!file.exists(".git/config")) {
     warning("There is not git included in this project. URL to bitbucket repo was not included in index.html.", call. = F)
-    # bit_yaml <- "\n---"
+    invisible(NULL)
   }
   else {
     git_config <- readLines(".git/config")

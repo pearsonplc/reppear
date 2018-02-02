@@ -9,6 +9,7 @@ License: GPL-2
 Imports:
     readability (>= 0.1.1),
     magrittr (>= 1.5),
+    purrr(>= 0.2.4),
     rmarkdown (>= 1.6)
 URL: https://github.com/pearsonplc/reppear
 BugReports: https://github.com/pearsonplc/reppear/issues

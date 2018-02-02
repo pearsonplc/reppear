@@ -16,7 +16,6 @@ report_create <- function(file, subdir = "reports"){
   if (files_cnt == 1) {
     rmarkdown::draft(file_name, template = "enr_report", package = "reppear", edit = FALSE)
     load_files(path = report_system_file(''), subdir = subdir)
-    # load_files(path = report_system_file(''), subdir = subdir)
     report_show(subdir, file, paste0(file, '.Rmd'))
     add_repo_to_yaml(file.path(subdir, "index.Rmd"))
   }
