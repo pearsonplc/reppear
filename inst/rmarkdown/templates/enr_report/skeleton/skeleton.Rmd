@@ -88,7 +88,7 @@ plot
 
 <div class = "plot-caption">Chart number and description goes here</div>
 
-### 2. Economy of the car decreases by `r abs(round(lmGeneral$coefficients["wt"],1))` <span class = "tooltipster tootlip-mpg">MPG</span></span> with each additional ton of car weight (on avg.). {#section2}
+### 2. Economy of the car decreases by `r abs(round(lmGeneral$coefficients["wt"],1))` <span class = "tooltipster tootlip-mpg">MPG</span> with each additional ton of car weight (on avg.). {#section2}
 
 The average decrease of car economy is __`r abs(round(lmGeneral$coefficients["wt"],1))`__ <span class = "tooltipster tootlip-mpg">MPG</span></span> per each additional ton of the car weight. However the decrease is __steper for cars with Manual transmission__ comparing to Automatic (`r abs(round(lmAM["Manual"],1 ))` and `r abs(round(lmAM["Automatic"],1 ))` <span class = "tooltipster tootlip-mpg">MPG</span></span> decrease with each ton respectively). We can also see that Manual transmission is more popular in case of the lighter cars and Automatic in case of the heavier ones.
 
